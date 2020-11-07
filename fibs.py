@@ -39,6 +39,6 @@ def fibonacci_stream():
     # accumulator acts as recurrent relation handler:
     # 1. applies next_fib on previous pair of Fibonacci numbers and (0, 1)
     # 2. (0, 1) is
-    # 2.a. used to calculate aggregation result on first first Fib elem: (0, 1) -> (1, 1)
+    # 2.a. used to calculate aggregation result on first first Fib elem: (0, 1) -> 1
     # 2.b. is ignored on further aggregation calls
     yield from (y for _, y in accumulate(repeat((0, 1)), next_fib))
